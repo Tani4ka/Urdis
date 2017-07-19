@@ -1,0 +1,144 @@
+/* ---------------------------------------------------------
+                           Header
+   ---------------------------------------------------------*/
+.top-line {
+  background: $main;
+  text-align: center;
+}
+
+.header-menu,
+.header-submenu {
+  @extend %listreset;
+
+  .header-menu__link,
+  .header-submenu__link {
+    padding: 25px 28px 25px;
+    border: none;
+    color: $white;
+    text-align: left;
+  }
+
+  .header-submenu__link {
+    text-align: left;
+  }
+}
+
+.header-menu.sf-menu {
+  display: inline-block;
+  margin: 0 auto -6px;
+  float: none;
+  font-family: RobotoCondensedRegular;
+  font-size: 0.9375em;
+
+
+  .header-menu__li {
+    display: inline-block;
+    background-color: transparent;
+  }
+
+  .header-menu__link {
+    .fa {
+      font-size: 11px;
+      margin-left: 2px;
+    }
+  }
+
+  .header-submenu {
+    &__li {
+      background: $main;
+
+
+    }
+    &__link {
+       padding: 10px 20px;
+       border-bottom: lighten($main, 5%) 1px solid;
+       border-left: lighten($main, 5%) 1px solid;
+     }
+  }
+
+  .header-menu__li:hover,
+  .header-menu__li_active{
+    background: darken($main, 3%);
+
+    .header-menu__link {
+      color: $accent;
+    }
+  }
+
+  .header-submenu__li:hover,
+  .header-submenu__li_active {
+
+    >.header-submenu__link {
+      color: $accent;
+    }
+  }
+
+  //.sf-with-ul {
+  //   padding-right: 1em;
+  //   &::after {
+  //     display: none;
+  //   }
+  // }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @extend %flex;
+// @extend %clearfix;
+// @extend %transition;    (all 0.5s ease)
+// @extend %listreset;     (margin:0; padding:0; list-style: none;)
+
+// @include animate(color) // (transform opacity, .6s) // (visibility opacity); (0.3s ease-in-out)
+// @include size(16px) // (15px, 4px);
+// @include v-align(157px);
+// @include font(14px,18px,#000);
+
+
+// font: italic 15px/1.75 'Times New Roman';
+// @include center_transform();
+// @include verrical_center_transform();
+// @include gradient(left, right, rgba(0,0,0,1), rgba(255,255,255,1));
+// @include button(#000,1px,#f0f0f0,25px,16px,19px,40px,20px);
+
+
+// media queries
+//@include media("<480px") {
+//
+//}
+//@include media(">=480px") {
+//
+//}
+//@include media("<tablet") {
+//
+//}
+//@include media(">=tablet") {
+//
+//}
+//@include media("<992px") {
+//
+//}
+//@include media(">=992px") {
+//
+//}
+//@include media("<1200px") {
+//
+//}
+//@include media(">=1200px") {
+//
+//}
