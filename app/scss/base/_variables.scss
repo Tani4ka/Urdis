@@ -22,9 +22,9 @@ $base-font-serif: 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
 
 // Body
 $base-text-color: $black !default;
-$base-background-color: $white !default;
+$base-background-color: $main !default;   // as $white !default
 $font-size-base: 16px !default;
-$line-height-base: 1.6 !default;                // 1.6 standart
+$line-height-base: 1.5 !default;                // 1.6 standart
 $base-font-family: 'RobotoRegular', $base-font-sans-serif !default;
 
 $vertical-rhythm: ($line-height-base * 1em);
@@ -50,13 +50,13 @@ $placeholder-color: #898989 !default;
 
 // Headers
 $h1-font-size: 67px !default;
-$h2-font-size: 2.5em !default;
+$h2-font-size: 3em !default;
 $h3-font-size: 20px !default;
 $h4-font-size: 19px !default;
 $h5-font-size: 17px !default;
 $h6-font-size: 15px !default;
 
-$headings-font-family: RobotoCondensedBold !default;  // was inherit !default
+$headings-font-family: RobotoCondensedLight !default;  // was inherit !default
 $headings-color: inherit !default;
 
 $animation-speed: 0.3s;

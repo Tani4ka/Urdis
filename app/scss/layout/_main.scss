@@ -2,10 +2,204 @@
                             Main
    ---------------------------------------------------------*/
 
+/* Slider */
+
+.slider {
+  position: relative;
+  top: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.slide-wrap {         // добавили класс в common.js и задали float, чтобы отобразился слайдер
+  float: left;
+
+  &.active {
+    .slide-content__header,
+    .slide-content__text {
+      opacity: 1;
+      left: 0;
+    }
+
+    .slide-content__img-wrap {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.slide {
+  position: relative;
+  padding-top: 208px;
+  padding-bottom: 110px;
+  color: $white;
+
+  @include media("<992px") {
+    padding-top: 130px;
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $main;
+      opacity: .85;
+    }
+  }
+
+  &-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 80px;
+
+    @include media("<992px") {
+      padding-top: 30px;
+    }
+
+    @include media("<768px") {
+      padding-top: 50px;
+    }
+
+    @include media("<480px") {
+      padding-top: 20px;
+    }
+
+    &__img-wrap {
+      padding-top: 12px;
+      opacity: 0;
+      transform: scale(.8);
+      transition: all 1s ease;
+      transition-delay: .25s;
+    }
+
+    &__img {
+      max-width: 100%;
+    }
+
+    &__header {
+      margin-top: 0;
+      margin-bottom: 20px;
+      line-height: 1.1875em;
+
+      @include media("<1200px") {
+        font-size: 2.5em;
+      }
+
+      position: relative;
+      left: 100px;
+      opacity: 0;
+      transition: all 1s ease;
+
+      &:first-line {
+        color: $accent;
+      }
+    }
+
+    &__text {
+      padding-bottom: 5px;
+      font-family: RobotoLight;
+      opacity: .75;
+
+      @include media("<1200px") {
+        font-size: 0.8750em;
+      }
+
+      position: relative;
+      left: 100px;
+      opacity: 0;
+      transition: all 1.5s ease;
+      transition-delay: .15s;
+    }
+  }
+}
+
+.owl-nav {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+
+  &-wrap {
+    position: relative;
+  }
+
+  &__prev,
+  &__next {
+    position: absolute;
+    top: 370px;
+    font-size: 25px;
+    color: $white;
+
+    @include media("<992px") {
+      top: 245px;
+    }
+
+    @include media("<768px") {
+      top: 260px;
+    }
+
+    @include media("<480px") {
+      top: 230px;
+    }
+  }
+
+  &__prev {
+    left: 0;
+  }
+  &__next {
+    right: 0;
+  }
+}
+
+.owl-dots {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+
+  .owl-dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 2px;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+    background: darken($main, 10%);
+    @extend %transition;
+
+    &.active {
+      background: $accent;
+    }
+  }
+}
 
 
 
 
+
+
+
+                                  /* Helper styles */
+
+  //&::before {
+  //  content: '';
+  //  position: absolute;
+  //  top: 0;
+  //  left: 0;
+  //  @include size(16px 16px);
+  //  background: $accent;
+  //}
 
   // @extend %flex;
   // @extend %clearfix;
@@ -17,39 +211,38 @@
   // @include v-align(157px);
   // @include font(14px,18px,#000);
 
-
-  // font: italic 15px/1.75 'Times New Roman';
+  // font: italic 15px/1.75 'Times New Roman';        // reduction form
   // @include center_transform();
   // @include verrical_center_transform();
   // @include gradient(left, right, rgba(0,0,0,1), rgba(255,255,255,1));
   // @include button(#000,1px,#f0f0f0,25px,16px,19px,40px,20px);
 
 
-  // media queries
-  //@include media("<480px") {
-  //
-  //}
-  //@include media(">=480px") {
-  //
-  //}
-  //@include media("<tablet") {
-  //
-  //}
-  //@include media(">=tablet") {
-  //
-  //}
-  //@include media("<992px") {
-  //
-  //}
-  //@include media(">=992px") {
-  //
-  //}
-  //@include media("<1200px") {
-  //
-  //}
-  //@include media(">=1200px") {
-  //
-  //}
+   // media queries
+  @include media("<480px") {
+
+  }
+  @include media(">=480px") {
+
+  }
+  @include media("<tablet") {
+
+  }
+  @include media(">=tablet") {
+
+  }
+  @include media("<992px") {
+
+  }
+  @include media(">=992px") {
+
+  }
+  @include media("<1200px") {
+
+  }
+  @include media(">=1200px") {
+
+  }
 
 
 

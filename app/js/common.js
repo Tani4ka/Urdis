@@ -84,17 +84,7 @@ $(function() {
 
                             /***** Aditional scripts *****/
 
-                                    /* Mmenu */
 
-    //var $menu = $('#my-menu').mmenu({
-    //    extensions: [ 'theme-black', 'effect-menu-slide', 'pagedim-black' ],    // 'widescreen' -don"t work
-    //    navbar: {
-    //        title: '<img src="img/logo.svg" alt="Салон красоты Смитлер">'
-    //    },
-    //    offCanvas: {
-    //        position: 'right'
-    //    }
-    //});
 
                                   /* Humburgers */
 
@@ -127,27 +117,7 @@ $(function() {
     //    }, 100);
     //});
 
-    //Owl-carousel
 
-    //$('.carousel-services').owlCarousel({
-    //    loop: true,
-    //    nav: true,
-    //    smartSpeed: 700,
-    //    navText: ['<i class="fa fa-angle-double-left">', '<i class="fa fa-angle-double-right">'],
-    //    responsiveClass: true,
-    //    dots: false,
-    //    responsive: {
-    //        0: {
-    //            items: 1
-    //        },
-    //        800: {
-    //            items: 2
-    //        },
-    //        1100: {
-    //            items: 3
-    //        }
-    //    }
-    //});
 
 
                     /* Blocks the same height for owl-carousel for images */
@@ -192,8 +162,78 @@ $(function() {
 
 
     $('.top-line .sf-menu').superfish({
-        cssArrows: false
+        cssArrows: false,
+        hoverClass: 'no-class',
+        delay: 200
     });
 
+                                /* Owl-carousel */
 
+    var owl = $('.slider');
+    owl.owlCarousel({
+        loop: true,
+        items: 1,
+        itemClass: 'slide-wrap',
+        nav: true,
+        navText:'',  // if we have additional owl-nav, default owl-nav will be empty.
+        dots: true,
+        smartSpeed: 700
+    });
+
+    // nav for additional owl-nav
+    $('.owl-nav__prev').click(function(){
+        owl.trigger('prev.owl.carousel');
+    });
+    $('.owl-nav__next').click(function(){
+        owl.trigger('next.owl.carousel');
+    });
+
+    //<section class="s-slider">
+    //    <div class="container">
+    //        <div class="owl-nav">
+    //            <div class="owl-nav__prew"><i class="fa fa-angle-left"></i></div>
+    //            <div class="owl-nav__next"><i class="fa fa-angle-right"></i></div>
+    //        </div>
+    //    </div>
+    //    <div class="slider">
+    //        <div class="slide"></div>
+    //        <div class="slide"></div>
+    //        <div class="slide"></div>
+    //    </div>
+    //</section>
+
+                                    /* Mmenu */
+
+    $(".mobile-mnu").after("<div id='my-menu'>");
+    $(".sf-menu").clone().appendTo("#my-menu");
+    $("#my-menu").find("*").attr("style", "");
+    $("#my-menu").find("ul").removeClass("sf-menu");
+    $("#my-menu").mmenu({
+        extensions: [ 'theme-white', 'pagedim-black', 'fx-menu-slide'],    // 'widescreen' -don"t work
+        navbar: {
+            title: 'Меню'
+        }
+    });
+                                /* Gamburger for menu */
+
+    // https://codepen.io/agragregra/pen/bEbbmZ
+
+    $(".mobile-mnu").click(function() {
+        var mmApi = $("#my-menu").data( "mmenu" );
+        mmApi.open();
+        var thiss = $(this).find(".toggle-mnu");
+        thiss.addClass("on");
+        $(".main-mnu").slideToggle();
+        return false;
+    });
+
+    //var api = $("#my-menu").data("mmenu");  // didn't work
+    //api.bind("closed", function () {
+    //    console.log('done');
+    //    $(".toggle-mnu").removeClass("on");
+    //});
+
+    $(".ishome").click(function() {
+        $(".toggle-mnu").removeClass("on");
+    });
 });
