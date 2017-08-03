@@ -169,8 +169,7 @@
   text-align: center;
 
   .owl-dot {
-    width: 10px;
-    height: 10px;
+    @include size(14px, 14px);
     margin: 0 2px;
     display: inline-block;
     border-radius: 50%;
@@ -184,11 +183,159 @@
   }
 }
 
+/* s-teaser */
+
+.s-teaser {
+  padding: 28px 0 28px;
+  background: $main;
+  color: $white;
+  font-size: 17px;
+}
+
+.teaser {
+  display: table-row;
+  
+  &-count {
+    @include size(45px, 48px);
+    position: relative;
+    display: table-cell;
+    padding-bottom: 10px;
+    
+    &__star {
+      font-size: 48px;
+      color: lighten($main, 10%);
+    }
+
+    &__number {
+      position: absolute;
+      top: 8px;
+      width: 95%;
+      color: $accent;
+      font-size: 22px;
+      font-family: RobotoCondensedBold;
+      text-align: center;
+    }
+  }
+  &__text {
+    padding-left: 15px;
+    display: table-cell;
+    font-family: RobotoCondensedLight;
+    line-height: 20px;
+    vertical-align: middle;
+    opacity: .28;
+  }
+}
 
 
+/* s-services */
 
+.s-services {
+  background: #efefef;
 
+  .col-md-3 {
+    padding: 0;
+  }
+}
 
+.services{
+  background: $white;
+  border: 5px solid $main;
+  text-align: center;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    border: 5px solid $accent;
+    transform: scale(1.04);
+    box-shadow: rgba(0, 0, 0, .35) 0 0 32px;
+    position: relative;
+    z-index: 2;
+
+    .services__image {
+      &::before {
+        opacity: .7;
+      }
+    }
+    .services__eye {
+      opacity: .4;
+    }
+    .services__stars {
+      .fa {
+        margin-left: 5px;
+        color: $accent;
+      }
+    }
+
+  }
+  
+  &__image {
+    min-height: 190px;
+    position: relative;
+    display: block;
+    background-size: cover;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      opacity: 0;
+      background: $main;
+      @extend %transition;
+    }
+
+    .services__eye {
+      font-size: 30px;
+      color: $white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -15px;
+      margin-left: -15px;
+      @extend %transition;
+      opacity: 0;
+    }
+  }
+
+  &__header {
+    height: 54px;     // need in js
+    margin-top: 22px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-family: RobotoCondensedBold;
+  }
+  
+  &__stars {
+    color: #b4b4b4;
+    font-size: 11px;
+
+    .fa {
+      margin-left: 1px;
+      @extend %transition;
+    }
+  }
+
+  &__price {
+    font-size: 18px;
+    font-family: RobotoBold;
+    margin-top: 5px;
+
+    &-tags {
+      color: $accent;
+    }
+    &-number {
+      font-size: 1.75em;
+    }
+  }
+
+  &__button {
+    margin: 15px 0 25px;
+    padding: 10px 35px;
+  }
+}
 
                                   /* Helper styles */
 
@@ -197,7 +344,7 @@
   //  position: absolute;
   //  top: 0;
   //  left: 0;
-  //  @include size(16px 16px);
+  //  @include size(16px, 16px);
   //  background: $accent;
   //}
 
