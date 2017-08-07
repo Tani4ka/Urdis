@@ -12,21 +12,21 @@ $(function() {
                                  /* E-mail Ajax Send */
 
     //Documentation & Example: https://github.com/agragregra/uniMail
-    $("form").submit(function() { //Change
-        var th = $(this);
-        $.ajax({
-            type: "POST",
-            url: "mail.php", //Change
-            data: th.serialize()
-        }).done(function() {
-            alert("Thank you!");
-            setTimeout(function() {
-                // Done Functions
-                th.trigger("reset");
-            }, 1000);
-        });
-        return false;
-    });
+    //$("form").submit(function() { //Change
+    //    var th = $(this);
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "mail.php", //Change
+    //        data: th.serialize()
+    //    }).done(function() {
+    //        alert("Thank you!");
+    //        setTimeout(function() {
+    //            // Done Functions
+    //            th.trigger("reset");
+    //        }, 1000);
+    //    });
+    //    return false;
+    //});
 
                              /* E-mail Ajax Send example */
 
@@ -130,6 +130,23 @@ $(function() {
     //    });
     //}carouselService();
 
+
+                                /* Blocks the same height */
+
+    //function carouselService() {
+    //    var mh = 23;
+    //    $('.services').each(function () {
+    //        var ths = $(this),
+    //            thsh = ths.find('.services__header').outerHeight();
+    //        //console.log(thsh);
+    //        if(thsh > mh) {
+    //            mh = thsh;
+    //        };
+    //    });
+    //
+    //    $('.services__header').height(mh);
+    //    //console.log($('.services__header').outerHeight());
+    //}carouselService();
 
                             /* Add last/first span for cms */
 
@@ -236,4 +253,11 @@ $(function() {
     $(".ishome").click(function() {
         $(".toggle-mnu").removeClass("on");
     });
+
+
+                                    /* equalHeights */
+
+    $('.services__header').equalHeights();
+    $('.services__text').equalHeights();
+
 });
