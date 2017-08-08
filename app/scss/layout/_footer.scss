@@ -2,5 +2,176 @@
                             Footer
    ---------------------------------------------------------*/
 .footer {
-  height: 500px;
+  position: relative;
+  color: $white;
+  background: #0e0b13;
+
+  &__logo {
+    opacity: .5;
+  }
+
+  &__text {
+    margin-top: 28px;
+    margin-bottom: 50px;
+    opacity: .3;
+    font-size: 0.8125em;
+  }
 }
+
+.footer-box {
+
+  &__list {
+    margin-bottom: 25px;
+  }
+  
+  &__li{
+    display: block;
+    max-width: 100%;
+    margin-bottom: 15px;
+    opacity: .6;
+
+    .fa {
+      opacity: .4;
+    }
+  }
+}
+
+.footer {
+  padding: 70px 0;
+
+    &__list {
+      @extend %listreset;
+    }
+
+    &__link {
+      position: relative;
+      padding: 0 10px 0 22px;
+      margin-bottom: 8px;
+      display: block;
+      color: $white;
+      opacity: .6;
+      font-size: 0.8125em;
+      text-decoration: underline;
+      @extend %transition;
+
+      .fa {
+        position: absolute;
+        left: 0;
+        top: 3px;
+        opacity: .4;
+        font-size: 15px;
+        @extend %transition;
+      }
+    }
+
+    &__li {
+      &:hover {
+        .footer__link {
+          text-decoration: none;
+          opacity: 1;
+          color: $white;
+
+          .fa {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    @include media("<768px") {
+      &__button {
+        margin-top: 10px;
+        margin-bottom: 40px;
+      }
+    }
+
+    @include media("<992px") {
+      .top-contacts,
+      .top-phone {
+        text-align: left;
+      }
+      .top-phone__br {
+        display: inline-block;
+      }
+    }
+
+  }
+
+.footer-developer {
+  margin: 80px 0 30px auto;
+  display: block;
+  width: 120px;
+  font-size: 14px;
+
+  text-align: right;
+  @include media("<992px") {
+    margin: 40px auto 30px 0;
+  }
+
+  &__text {
+    display: block;
+    margin: 0;
+    text-align: left;
+    color: $white;
+  }
+}
+
+
+
+
+
+
+
+
+  /* Helper styles */
+
+  //&::before {
+  //  content: '';
+  //  position: absolute;
+  //  top: 0;
+  //  left: 0;
+  //  @include size(100%, 100%);
+  //  background: $accent;
+  //}
+
+  // @extend %flex;
+  // @extend %clearfix;
+  // @extend %transition;    (all 0.5s ease)
+  // @extend %listreset;     (margin:0; padding:0; list-style: none;)
+
+  // @include animate(color) // (transform opacity, .6s) // (visibility opacity); (0.3s ease-in-out)
+  // @include size(16px) // (15px, 4px);
+  // @include v-align(157px);
+  // @include font(14px,18px,#000);
+
+  // font: italic 15px/1.75 'Times New Roman';        // reduction form
+  // @include center_transform();
+  // @include verrical_center_transform();
+  // @include gradient(left, right, rgba(0,0,0,1), rgba(255,255,255,1));
+  // @include button(#000,1px,#f0f0f0,25px,16px,19px,40px,20px);
+
+
+  // media queries
+  @include media("<480px") {
+
+  }
+  @include media(">=480px") {
+
+  }
+  @include media("<tablet") {
+
+  }
+  @include media(">=tablet") {
+
+  }
+  @include media("<992px") {
+
+  }
+  @include media(">=992px") {
+
+  }
+  @include media("<1200px") {
+
+  }
+  @include media(">=1200px") {
+
+  }

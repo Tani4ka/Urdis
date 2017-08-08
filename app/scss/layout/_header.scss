@@ -195,9 +195,7 @@
   font-family: RobotoCondensedRegular;
   text-align: right;
 
-  @include media("<1200px") {
-    font-size: 1.01em;
-  }
+
 
   &__small {
     font-size: 0.8125em;
@@ -210,6 +208,14 @@
     }
   }
 }
+.top-panel {
+  .top-phone {
+    @include media("<1200px") {
+      font-size: 1.01em;
+    }
+  }
+}
+
 
 .top-email {
   white-space: nowrap;
