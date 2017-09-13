@@ -32,6 +32,7 @@
 	}
 
 	&:focus, &:hover {
+	  	outline: none;
 	    text-decoration: none;
 	    color: $btn-color;
 	}

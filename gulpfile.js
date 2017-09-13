@@ -34,6 +34,7 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/OwlCarousel/owl.carousel.min.js',
 		'app/libs/jQuery.mmenu/jquery.mmenu.all.js',
 		'app/libs/equalheights/equalheights.js',
+		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
 
 		'app/js/common.min.js', // Всегда в конце
 		])

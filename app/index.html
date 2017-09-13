@@ -114,7 +114,7 @@
 									<span class="top-email__small"><i class="fa fa-envelope"></i> E-Mail: </span><a class="top-email__link" href="mailto:emailsender@gmail.com">emailsender@gmail.com</a>
 								</div>
 								<div class="top-button">
-									<a href="callback" class="button button_small">Заказать звонок</a>
+									<a href="#callback" class="button button_small popup-with-move-anim" data-form="Верхняя форма">Заказать звонок</a>
 								</div>
 							</div>
 						</div>
@@ -602,7 +602,7 @@
 							<span class="top-email__small"><i class="fa fa-envelope"></i> E-Mail: </span><a class="top-email__link" href="mailto:emailsender@gmail.com">emailsender@gmail.com</a>
 						</div>
 						<div class="top-button footer__button">
-							<a href="callback" class="button button_small">Заказать звонок</a>
+							<a href="#callback" class="button button_small popup-with-move-anim" data-form="Нижняя форма">Заказать звонок</a>
 						</div>
 					</div>
 					<a href="#" class="footer-developer hidden-xs">
@@ -650,9 +650,9 @@
 
 			</div>
 		</div>
-
 	</footer>
 	<!-- Footer end -->
+
 
 
 	<!--buttot to top-->
@@ -660,7 +660,35 @@
 
 
 	<!--for modal windows-->
-	<div class="hidden"></div>
+	<div class="hidden">
+
+		<form class="popup callback zoom-anim-dialog" id="callback">
+
+            <div class="success"><h4 class="success__header">Спасибо за заявку!</h4> Наш менеджер свяжется с вами в ближайшее время.</div>
+
+			<!-- Hidden Required Fields -->
+			<input type="hidden" name="project_name" value="Urdis">
+			<input type="hidden" name="admin_email" value="tatyana.granchenko@gmail.com"> <!-- можно указать в mail.php для конфединциальности вместо trim($_POST["admin_email"]); -->
+			<input type="hidden" name="form_subject" value="Заявка с сайта Urdis">
+			<!-- END Hidden Required Fields -->
+
+
+			<h3 class="popup__header">Заказать звонок</h4>
+            <label class="popup__label">
+                <span class="popup__text">Ваше имя:</span>
+                <input class="popup__input" type="text" name="Имя" placeholder="Введите ваше имя..." required/>
+            </label>
+            <label class="popup__label">
+                <span class="popup__text">Ваш телефон:</span>
+                <input class="popup__input" type="text" name="Телефон" placeholder="Введите ваш телефон..." required/>
+            </label>
+            <div class="popup__button">
+                <button class="button">Отправить</button>
+            </div>
+                <input class="formname" type="hidden" name="Форма"/> <!-- С какой формы пришла заявка -->
+        </form>
+
+	</div>
 
 
 								<!-- Scripts -->

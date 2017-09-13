@@ -162,3 +162,68 @@ strong, b {
   font-family: RobotoBold;
   font-weight: normal;
 }
+
+.popup {
+
+  &__header {
+    margin: 22px 0;
+    font-family: RobotoCondensedBold;
+    text-align: center;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    display: block;
+    font-size: 0.8750em;
+    color: #999;
+  }
+
+  .popup__input {
+    width: 100%;
+    padding: 6px 15px;
+    border: 4px solid $accent;
+    display: block;
+    color: #333;
+  }
+
+  .popup__input:focus {
+    border: 4px solid $accent;
+  }
+
+  &__button {
+    text-align: center;
+    padding: 20px 0 10px;
+  }
+}
+
+.success {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+  background: $white;
+  color: $main;
+  font-family: RobotoCondensedBold;
+  font-size: 18px;
+
+  &__header {
+    font-family: inherit;
+    margin-bottom: 5px;
+  }
+
+  &.visible {
+    display: flex;
+  }
+}
+
