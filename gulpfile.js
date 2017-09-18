@@ -113,7 +113,7 @@ gulp.task('deploy', function() {
 	'dist/.htaccess',  // .htaccess - для работы с сервером, для кеширования
 	];
 	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/public_html/S-Mitler'));  // change name of progect folder
+	.pipe(conn.dest('/public_html/Urdis-2'));  // change name of progect folder
 
 });
 
