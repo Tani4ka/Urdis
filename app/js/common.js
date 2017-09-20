@@ -296,6 +296,14 @@ $(function() {
         $('#callback .formname').val($(this).data('form'));
     })
 
+                                /* Active menu link */
+
+    $(function() {
+        $( '.header-menu li' ).on( 'click', function() {
+            $( this ).parent().find( '.header-menu__li_active' ).removeClass( 'header-menu__li_active' );
+            $( this ).addClass( 'header-menu__li_active' );
+        });
+    });
 });
 
 

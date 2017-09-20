@@ -511,7 +511,7 @@
 
     .fa {
       position: absolute;
-      left: 10px;
+      left: 0px;
       top: 3px;
       opacity: .4;
       font-size: 15px;
@@ -522,6 +522,7 @@
         color: $accent;
         opacity: 1;
         top: 10px;
+        left: 10px;
       }
     }
   }
