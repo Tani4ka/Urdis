@@ -27,27 +27,15 @@ $(function() {
                 $.magnificPopup.close();
             }, 3000);
         });
+        //}).done(function() {
+        //    $(th).find('.success').addClass('active').css('display', 'flex').hide().fadeIn(); // alert("Thank you!");
+        //    setTimeout(function() {
+        //        $(th).find('.success').removeClass('active').fadeOut();// Done Functions
+        //        th.trigger("reset");
+        //    }, 3000);
+        //});
         return false;
     });
-
-
-                             /* E-mail Ajax Send example */
-
-    //$("form.callback").submit(function() { //Change
-    //    var th = $(this);
-    //    $.ajax({
-    //        type: "POST",
-    //        url: "/mail.php", //Change
-    //        data: th.serialize()
-    //    }).done(function() {
-    //        $(th).find('.success').addClass('active').css('display', 'flex').hide().fadeIn(); // alert("Thank you!");
-    //        setTimeout(function() {
-    //            $(th).find('.success').removeClass('active').fadeOut();// Done Functions
-    //            th.trigger("reset");
-    //        }, 3000);
-    //    });
-    //    return false;
-    //});
 
                                 /* Chrome Smooth Scroll */
     try {
@@ -55,9 +43,7 @@ $(function() {
         if($("html").hasClass("chrome")) {
             $.smoothScroll();
         }
-    } catch(err) {
-
-    };
+    } catch(err) {};
 
                                 /* Prevent Drag for a, img */
 
@@ -89,7 +75,39 @@ $(function() {
 
                             /***** Aditional scripts *****/
 
-                                  /* Humburgers */
+
+                                /* Fixed sidebar block */
+    //$(function(){
+    //    var topPos = $('#floating').offset().top; //расстояние от АйДи флоатинг до начала документа
+    //    $(window).scroll(function() { //при скроллинге:
+    //        var top = $(document).scrollTop(),//скролинг документа
+    //            pip = $('footer').offset().top,//расстояние от футера до начала документа
+    //            height = $('#floating').outerHeight();//высота черного блока
+    //        console.log(topPos)//вывод в консоль любого значения
+    //
+    //        if (top > topPos && top < pip - height) {//проскролено больше расстояния от АйДи флоатинг до начала документа
+    //            //и проскролено меньше чем расстояние от футера минус высота черного блоока
+    //            $('#floating').addClass('fixed').fadeIn(300); //добавляем черному блоку класс фиксед и плавное проявление
+    //        }
+    //        else if (top > pip - height) {$('#floating').fadeOut(100);//скрытие черного блока при достижении футера
+    //        }
+    //        else {$('#floating').removeClass('fixed');}//убираем класс фиксед
+    //    });
+    //});
+
+                                 /* Popup show hide */
+
+    //$(document).ready(function(){
+    //    PopUpHide();
+    //});
+    //function PopUpShow(){
+    //    $("#popup1").show();
+    //}
+    //function PopUpHide(){
+    //    $("#popup1").hide();
+    //}
+
+                                    /* Humburgers */
 
     //var $humburger = $(".hamburger");
     //var API = $menu.data( "mmenu" );
@@ -110,8 +128,6 @@ $(function() {
     //});
 
 
-
-
         /* Owl-carousel (если карусель заружена, сделать блоки одинаковой высоты) */
 
     //$('.carousel-services').on('initialized.owl.carousel', function () {
@@ -119,8 +135,6 @@ $(function() {
     //        carouselService()
     //    }, 100);
     //});
-
-
 
 
                     /* Blocks the same height for owl-carousel for images */
@@ -237,7 +251,6 @@ $(function() {
                                 /* Gamburger for menu */
 
     // https://codepen.io/agragregra/pen/bEbbmZ
-
     $(".mobile-mnu").click(function() {
         var mmApi = $("#my-menu").data( "mmenu" );
         mmApi.open();
@@ -284,3 +297,12 @@ $(function() {
     })
 
 });
+
+
+
+
+
+
+
+
+

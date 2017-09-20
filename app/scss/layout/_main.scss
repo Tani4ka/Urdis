@@ -38,6 +38,14 @@
     padding-top: 130px;
   }
 
+  .isnohome & {         // isnohome
+      padding: 120px 0 40px;
+
+    @include media("<480px") {
+      padding-top: 150px;
+    }
+  }
+
   &__bg {
     position: absolute;
     left: 0;
@@ -75,12 +83,22 @@
       padding-top: 20px;
     }
 
+    .isnohome & {         // isnohome
+      .col-md-6 {
+        width: 100%;
+      }
+    }
+
     &__img-wrap {
       padding-top: 12px;
       opacity: 0;
       transform: scale(.8);
       transition: all 1s ease;
       transition-delay: .25s;
+
+      .isnohome & {         // isnohome
+        display: none;
+      }
     }
 
     &__img {
@@ -88,18 +106,21 @@
     }
 
     &__header {
+      position: relative;
+      left: 100px;
       margin-top: 0;
       margin-bottom: 20px;
+      opacity: 0;
       line-height: 1.1875em;
+      transition: all 1s ease;
 
       @include media("<1200px") {
         font-size: 2.5em;
       }
 
-      position: relative;
-      left: 100px;
-      opacity: 0;
-      transition: all 1s ease;
+      .isnohome & {         // isnohome
+        font-size: 2.25em;
+      }
 
       &:first-line {
         color: $accent;
@@ -107,19 +128,21 @@
     }
 
     &__text {
+      position: relative;
+      left: 100px;
       padding-bottom: 5px;
       font-family: RobotoLight;
-      opacity: .75;
+      opacity: 0;
+      transition: all 1.5s ease;
+      transition-delay: .15s;
 
       @include media("<1200px") {
         font-size: 0.8750em;
       }
 
-      position: relative;
-      left: 100px;
-      opacity: 0;
-      transition: all 1.5s ease;
-      transition-delay: .15s;
+      .isnohome & {         // isnohome
+        display: none;
+      }
     }
   }
 }
@@ -151,6 +174,18 @@
     @include media("<480px") {
       top: 230px;
     }
+
+    .isnohome & {         // isnohome
+        top: 230px;
+
+      @include media("<992px") {
+        top: 200px;
+      }
+
+      @include media("<768px") {
+        top: 230px;
+      }
+    }
   }
 
   &__prev {
@@ -167,6 +202,10 @@
   width: 100%;
   z-index: 2;
   text-align: center;
+
+  .isnohome & {         // isnohome
+    display: none;
+  }
 
   .owl-dot {
     @include size(14px, 14px);
@@ -250,14 +289,15 @@
     position: relative;
     z-index: 2;
 
-    .services__image {
+    a.services__image {
       &::before {
         opacity: .7;
       }
+      .services__eye {
+        opacity: .4;
+      }
     }
-    .services__eye {
-      opacity: .4;
-    }
+
     .services__stars {
       .fa {
         margin-left: 5px;
@@ -440,4 +480,150 @@
     line-height: 18px;
     overflow: hidden;
   }
+}
+
+
+/* second menu */
+
+.second-menu {
+  @extend %listreset;
+
+  &__link {
+    position: relative;
+    padding: 0 10px 0 22px;
+    margin-bottom: 8px;
+    display: block;
+    color: $white;
+    opacity: .6;
+    font-size: 0.8125em;
+    text-decoration: underline;
+    @extend %transition;
+
+    .aside-menu & {            // aside-menu
+      padding: 8px 0 8px 32px;
+      margin-bottom: 0;
+      border-bottom: 1px solid #e3e3e3;
+      opacity: 1;
+      color: $black;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .fa {
+      position: absolute;
+      left: 10px;
+      top: 3px;
+      opacity: .4;
+      font-size: 15px;
+      @extend %transition;
+
+      .aside-menu & {            // aside-menu
+        font-size: 14px;
+        color: $accent;
+        opacity: 1;
+        top: 10px;
+      }
+    }
+  }
+
+  &__li {
+     @extend %listreset;
+
+    &:hover {
+      .second-menu__link {
+        text-decoration: none;
+        opacity: 1;
+        color: $white;
+
+        .fa {
+          opacity: 1;
+        }
+      }
+    }
+
+    .aside-menu & {        // aside-menu
+      max-width: 100%;
+
+      &:hover {
+        .second-menu__link {
+          text-decoration: underline;
+          color: $main;
+        }
+      }
+
+      &_active {
+        background: $accent;
+        color: $white;
+
+
+        .second-menu__link {
+          color: $white;
+          font-family: RobotoBold;
+
+          &:hover {
+            color: $white;
+            text-decoration: underline;
+          }
+        }
+
+        .fa {
+          color: lighten($accent, 30%);
+        }
+      }
+
+
+    }
+  }
+
+  @include media("<768px") {
+    &__button {
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+  }
+
+  @include media("<992px") {
+    .top-contacts,
+    .top-phone {
+      text-align: left;
+    }
+    .top-phone__br {
+      display: inline-block;
+    }
+  }
+}
+
+
+/*** Company.html ***/
+
+/* s-content */
+.s-content {
+  background: #efefef;
+  color: #000;
+}
+
+.content {
+  padding: 60px 0;
+}
+
+.article {
+  &__header {
+    margin-top: 0;
+    font-family: RobotoCondensedBold;
+  }
+
+  img {
+    max-width: 100%; // на случай, если заказчик захочет поместить изображение в статью.
+  }
+}
+
+/* aside */
+.aside-menu {
+  margin: 30px 0;
+}
+
+.top-box__header_aside {
+  font-family: RobotoCondensedBold;
+  font-size: 1.25em;
+  margin-bottom: 20px;
 }

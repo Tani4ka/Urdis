@@ -28,6 +28,10 @@
     border: none;
     color: $white;
     text-align: left;
+
+    .isnohome & {         // isnohome
+      padding: 15px 28px;
+    }
   }
 
   .header-submenu__link {
@@ -100,6 +104,10 @@
 
   @include media("<992px") {
     padding: 10px 0 20px;
+  }
+
+  .isnohome & {         // isnohome
+    padding: 25px 0;
   }
 
   &::before {
@@ -330,8 +338,6 @@ html.mm-opened {
 .mm-panels > .mm-panel.mm-hasnavbar {
   right: -18px;
 }
-
-
 
 
 

@@ -5,6 +5,7 @@
   position: relative;
   color: $white;
   background: #0e0b13;
+  padding: 70px 0;
 
   &__logo {
     opacity: .5;
@@ -36,65 +37,60 @@
   }
 }
 
-.footer {
-  padding: 70px 0;
-
-    &__list {
-      @extend %listreset;
-    }
-
-    &__link {
-      position: relative;
-      padding: 0 10px 0 22px;
-      margin-bottom: 8px;
-      display: block;
-      color: $white;
-      opacity: .6;
-      font-size: 0.8125em;
-      text-decoration: underline;
-      @extend %transition;
-
-      .fa {
-        position: absolute;
-        left: 0;
-        top: 3px;
-        opacity: .4;
-        font-size: 15px;
-        @extend %transition;
-      }
-    }
-
-    &__li {
-      &:hover {
-        .footer__link {
-          text-decoration: none;
-          opacity: 1;
-          color: $white;
-
-          .fa {
-            opacity: 1;
-          }
-        }
-      }
-    }
-    @include media("<768px") {
-      &__button {
-        margin-top: 10px;
-        margin-bottom: 40px;
-      }
-    }
-
-    @include media("<992px") {
-      .top-contacts,
-      .top-phone {
-        text-align: left;
-      }
-      .top-phone__br {
-        display: inline-block;
-      }
-    }
-
-  }
+//.second-menu {          // in main.scss
+//  @extend %listreset;
+//
+//  &__link {
+//    position: relative;
+//    padding: 0 10px 0 22px;
+//    margin-bottom: 8px;
+//    display: block;
+//    color: $white;
+//    opacity: .6;
+//    font-size: 0.8125em;
+//    text-decoration: underline;
+//    @extend %transition;
+//
+//    .fa {
+//      position: absolute;
+//      left: 0;
+//      top: 3px;
+//      opacity: .4;
+//      font-size: 15px;
+//      @extend %transition;
+//    }
+//  }
+//
+//  &__li {
+//    &:hover {
+//      .footer__link {
+//        text-decoration: none;
+//        opacity: 1;
+//        color: $white;
+//
+//        .fa {
+//          opacity: 1;
+//        }
+//      }
+//    }
+//  }
+//  @include media("<768px") {
+//    &__button {
+//      margin-top: 10px;
+//      margin-bottom: 40px;
+//    }
+//  }
+//
+//  @include media("<992px") {
+//    .top-contacts,
+//    .top-phone {
+//      text-align: left;
+//    }
+//    .top-phone__br {
+//      display: inline-block;
+//    }
+//  }
+//}
 
 .footer-developer {
   margin: 80px 0 30px auto;

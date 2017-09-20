@@ -78,7 +78,6 @@ gulp.task('imagemin', function() {
 });
 
 gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
-
 	var buildFiles = gulp.src([
 		'app/*.html',
 		'app/.htaccess',
@@ -95,11 +94,9 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 	var buildFonts = gulp.src([
 		'app/fonts/**/*',
 		]).pipe(gulp.dest('dist/fonts'));
-
 });
 
 gulp.task('deploy', function() {
-
 	var conn = ftp.create({
 		host:      'webdevgranchenko.esy.es',
 		user:      'u715394280',
@@ -114,7 +111,6 @@ gulp.task('deploy', function() {
 	];
 	return gulp.src(globs, {buffer: false})
 	.pipe(conn.dest('/public_html/Urdis-2'));  // change name of progect folder
-
 });
 
 gulp.task('rsync', function() {
@@ -131,5 +127,4 @@ gulp.task('rsync', function() {
 
 gulp.task('removedist', function() { return del.sync('dist'); });
 gulp.task('clearcache', function () { return cache.clearAll(); });
-
 gulp.task('default', ['watch']);
