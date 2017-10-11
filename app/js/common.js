@@ -59,11 +59,9 @@ $(function() {
             $('.top').removeClass('active');
         }
     });
-
     $('.top').click(function () {
         $('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
     });
-
 
                                     /* Preloader */
 
@@ -75,8 +73,7 @@ $(function() {
 
                             /***** Aditional scripts *****/
 
-
-                                /* Fixed sidebar block */
+                      /* Fixed sidebar block (couse ttmh/css)*/
     //$(function(){
     //    var topPos = $('#floating').offset().top; //расстояние от АйДи флоатинг до начала документа
     //    $(window).scroll(function() { //при скроллинге:
